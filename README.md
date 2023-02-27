@@ -1,3 +1,3 @@
 # gh-actions-postman
 
-Repository with postman tests for Secret Santa
+[![CI](https://github.com/MelihovaN/gh-actions-postman/actions/workflows/blank.yml/badge.svg)](https://github.com/MelihovaN/gh-actions-postman/actions/workflows/blank.yml)
