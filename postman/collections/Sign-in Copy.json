@@ -1,0 +1,1219 @@
+{
+	"info": {
+		"_postman_id": "0fd22324-3c8d-4692-be4e-203799fd0e59",
+		"name": "Sign-in Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "19331980-0fd22324-3c8d-4692-be4e-203799fd0e59"
+	},
+	"item": [
+		{
+			"name": "Sign-in with invalid email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.eql(\"USER_NOT_FOUND\");",
+							"    pm.expect(jsonData.error.name).to.eql(\"NotFoundError\");",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4613a319-7aec-45e9-b9c1-35766e451579",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"{{$randomEmail}}\", \"password\": \"Test1234\" } ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/login?redirect=%2F",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "redirect",
+							"value": "%2F"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e20d6c67-de4b-43c7-9a4b-2a3e8365a38d",
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"{{$randomEmail}}\", \"password\": \"Test1234\" } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base url}}/login?redirect=%2F",
+							"host": [
+								"{{base url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "redirect",
+									"value": "%2F"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:50:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Thu, 26 Jan 2023 18:11:16 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aec-185ef46dc3a\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\" dir=\"ltr\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no\"><meta name=\"description\" content=\"Бесплатный сайт для организации онлайн жеребьевки на Тайного Санту между друзьями. Три шага: 1 - создай коробку, 2 - пригласи друзей, 3 - проведи жеребьевку\"/><link rel=\"canonical\" href=\"/\"/><title>Тайный Санта</title><link href=\"/bundle.0a0aaccc7b18ab739d69.min.css\" rel=\"stylesheet\"></head><body><div id=\"root\"></div><script>window.prerenderReady = false;</script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js\" integrity=\"sha256-yUhvEmYVhZ/GGshIQKArLvySDSh6cdmdcIx0spR3UP4=\" crossorigin=\"anonymous\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js\" integrity=\"sha256-vFt3l+illeNlwThbDUdoPTqF81M8WNSZZZt3HEjsbSU=\" crossorigin=\"anonymous\"></script><script>(function (d, w, c) {\n            (w[c] = w[c] || []).push(function () {\n                try {\n                    w.yaCounter50179975 = new Ya.Metrika2({\n                        id: 50179975,\n                        clickmap: true,\n                        trackLinks: true,\n                        accurateTrackBounce: true\n                    });\n                    w.yaCounter = w.yaCounter50179975;\n                } catch (e) {\n                }\n            });\n\n            var n = d.getElementsByTagName(\"script\")[0],\n                s = d.createElement(\"script\"),\n                f = function () {\n                    n.parentNode.insertBefore(s, n);\n                };\n            s.type = \"text/javascript\";\n            s.async = true;\n            s.src = \"https://mc.yandex.ru/metrika/tag.js\";\n\n            if (w.opera === \"[object Opera]\") {\n                d.addEventListener(\"DOMContentLoaded\", f, false);\n            } else {\n                f();\n            }\n        })(document, window, \"yandex_metrika_callbacks2\");</script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/rlf.js\"></script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/vbf.js\"></script><script>window.TelegramBotId = '5036369722';\n    window.TelegramBotName = 'TestSantaSecretRuBot';\n\n    \n\n    function js(url) {\n        const s = document.createElement(\"script\");\n        s.type = \"text/javascript\";\n        s.src = url;\n        document.getElementsByTagName(\"head\")[0].appendChild(s);\n    }\n\n    window.addEventListener(\"load\", () => {\n        js(\"https://telegram.org/js/telegram-widget.js?15\");\n    }, false);</script><script src=\"/bundle.0a0aaccc7b18ab739d69.min.js\"></script></body></html>"
+				}
+			]
+		},
+		{
+			"name": "Sign-in with invalid password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.eql(\"INVALID_USERNAME_OR_PASSWORD\");",
+							"    pm.expect(jsonData.error.name).to.eql(\"BadRequestError\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "eca87ebd-7360-458c-93f0-4455d12179e3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"{{$randomPassword}}\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/login?redirect=%2F",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "redirect",
+							"value": "%2F"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d5933d28-75a5-4eff-b3f9-0a14ca2b6e64",
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"{{email}}\", \"password\": \"{{$randomPassword}}\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base url}}/login?redirect=%2F",
+							"host": [
+								"{{base url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "redirect",
+									"value": "%2F"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:50:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Thu, 26 Jan 2023 18:11:16 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aec-185ef46dc3a\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\" dir=\"ltr\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no\"><meta name=\"description\" content=\"Бесплатный сайт для организации онлайн жеребьевки на Тайного Санту между друзьями. Три шага: 1 - создай коробку, 2 - пригласи друзей, 3 - проведи жеребьевку\"/><link rel=\"canonical\" href=\"/\"/><title>Тайный Санта</title><link href=\"/bundle.0a0aaccc7b18ab739d69.min.css\" rel=\"stylesheet\"></head><body><div id=\"root\"></div><script>window.prerenderReady = false;</script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js\" integrity=\"sha256-yUhvEmYVhZ/GGshIQKArLvySDSh6cdmdcIx0spR3UP4=\" crossorigin=\"anonymous\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js\" integrity=\"sha256-vFt3l+illeNlwThbDUdoPTqF81M8WNSZZZt3HEjsbSU=\" crossorigin=\"anonymous\"></script><script>(function (d, w, c) {\n            (w[c] = w[c] || []).push(function () {\n                try {\n                    w.yaCounter50179975 = new Ya.Metrika2({\n                        id: 50179975,\n                        clickmap: true,\n                        trackLinks: true,\n                        accurateTrackBounce: true\n                    });\n                    w.yaCounter = w.yaCounter50179975;\n                } catch (e) {\n                }\n            });\n\n            var n = d.getElementsByTagName(\"script\")[0],\n                s = d.createElement(\"script\"),\n                f = function () {\n                    n.parentNode.insertBefore(s, n);\n                };\n            s.type = \"text/javascript\";\n            s.async = true;\n            s.src = \"https://mc.yandex.ru/metrika/tag.js\";\n\n            if (w.opera === \"[object Opera]\") {\n                d.addEventListener(\"DOMContentLoaded\", f, false);\n            } else {\n                f();\n            }\n        })(document, window, \"yandex_metrika_callbacks2\");</script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/rlf.js\"></script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/vbf.js\"></script><script>window.TelegramBotId = '5036369722';\n    window.TelegramBotName = 'TestSantaSecretRuBot';\n\n    \n\n    function js(url) {\n        const s = document.createElement(\"script\");\n        s.type = \"text/javascript\";\n        s.src = url;\n        document.getElementsByTagName(\"head\")[0].appendChild(s);\n    }\n\n    window.addEventListener(\"load\", () => {\n        js(\"https://telegram.org/js/telegram-widget.js?15\");\n    }, false);</script><script src=\"/bundle.0a0aaccc7b18ab739d69.min.js\"></script></body></html>"
+				}
+			]
+		},
+		{
+			"name": "Sign-in with  blank username or password field",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.eql(\"validations.invalid\");",
+							"    pm.expect(jsonData.error.name).to.eql(\"ValidationError\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "efff5de4-caa2-4196-a64c-33bcd87485c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/login?redirect=%2F",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "redirect",
+							"value": "%2F"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d161c04c-945d-465f-a831-9ab94cdb0b51",
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base url}}/login?redirect=%2F",
+							"host": [
+								"{{base url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "redirect",
+									"value": "%2F"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:50:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Thu, 26 Jan 2023 18:11:16 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aec-185ef46dc3a\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\" dir=\"ltr\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no\"><meta name=\"description\" content=\"Бесплатный сайт для организации онлайн жеребьевки на Тайного Санту между друзьями. Три шага: 1 - создай коробку, 2 - пригласи друзей, 3 - проведи жеребьевку\"/><link rel=\"canonical\" href=\"/\"/><title>Тайный Санта</title><link href=\"/bundle.0a0aaccc7b18ab739d69.min.css\" rel=\"stylesheet\"></head><body><div id=\"root\"></div><script>window.prerenderReady = false;</script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js\" integrity=\"sha256-yUhvEmYVhZ/GGshIQKArLvySDSh6cdmdcIx0spR3UP4=\" crossorigin=\"anonymous\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js\" integrity=\"sha256-vFt3l+illeNlwThbDUdoPTqF81M8WNSZZZt3HEjsbSU=\" crossorigin=\"anonymous\"></script><script>(function (d, w, c) {\n            (w[c] = w[c] || []).push(function () {\n                try {\n                    w.yaCounter50179975 = new Ya.Metrika2({\n                        id: 50179975,\n                        clickmap: true,\n                        trackLinks: true,\n                        accurateTrackBounce: true\n                    });\n                    w.yaCounter = w.yaCounter50179975;\n                } catch (e) {\n                }\n            });\n\n            var n = d.getElementsByTagName(\"script\")[0],\n                s = d.createElement(\"script\"),\n                f = function () {\n                    n.parentNode.insertBefore(s, n);\n                };\n            s.type = \"text/javascript\";\n            s.async = true;\n            s.src = \"https://mc.yandex.ru/metrika/tag.js\";\n\n            if (w.opera === \"[object Opera]\") {\n                d.addEventListener(\"DOMContentLoaded\", f, false);\n            } else {\n                f();\n            }\n        })(document, window, \"yandex_metrika_callbacks2\");</script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/rlf.js\"></script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/vbf.js\"></script><script>window.TelegramBotId = '5036369722';\n    window.TelegramBotName = 'TestSantaSecretRuBot';\n\n    \n\n    function js(url) {\n        const s = document.createElement(\"script\");\n        s.type = \"text/javascript\";\n        s.src = url;\n        document.getElementsByTagName(\"head\")[0].appendChild(s);\n    }\n\n    window.addEventListener(\"load\", () => {\n        js(\"https://telegram.org/js/telegram-widget.js?15\");\n    }, false);</script><script src=\"/bundle.0a0aaccc7b18ab739d69.min.js\"></script></body></html>"
+				}
+			]
+		},
+		{
+			"name": "Sign-in with valid email and password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.username).to.eql(\"natalia\");",
+							"    pm.expect(jsonData.email).to.eql(\"melihova.qa@gmail.com\");",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "7611a7e6-813e-416f-bf3a-2b6bcba854a7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/login?redirect=%2F",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "redirect",
+							"value": "%2F"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d16790ec-96d9-41df-80e3-fd55f9ac99d3",
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base url}}/login?redirect=%2F",
+							"host": [
+								"{{base url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "redirect",
+									"value": "%2F"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:50:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Thu, 26 Jan 2023 18:11:16 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aec-185ef46dc3a\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\" dir=\"ltr\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no\"><meta name=\"description\" content=\"Бесплатный сайт для организации онлайн жеребьевки на Тайного Санту между друзьями. Три шага: 1 - создай коробку, 2 - пригласи друзей, 3 - проведи жеребьевку\"/><link rel=\"canonical\" href=\"/\"/><title>Тайный Санта</title><link href=\"/bundle.0a0aaccc7b18ab739d69.min.css\" rel=\"stylesheet\"></head><body><div id=\"root\"></div><script>window.prerenderReady = false;</script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js\" integrity=\"sha256-yUhvEmYVhZ/GGshIQKArLvySDSh6cdmdcIx0spR3UP4=\" crossorigin=\"anonymous\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js\" integrity=\"sha256-vFt3l+illeNlwThbDUdoPTqF81M8WNSZZZt3HEjsbSU=\" crossorigin=\"anonymous\"></script><script>(function (d, w, c) {\n            (w[c] = w[c] || []).push(function () {\n                try {\n                    w.yaCounter50179975 = new Ya.Metrika2({\n                        id: 50179975,\n                        clickmap: true,\n                        trackLinks: true,\n                        accurateTrackBounce: true\n                    });\n                    w.yaCounter = w.yaCounter50179975;\n                } catch (e) {\n                }\n            });\n\n            var n = d.getElementsByTagName(\"script\")[0],\n                s = d.createElement(\"script\"),\n                f = function () {\n                    n.parentNode.insertBefore(s, n);\n                };\n            s.type = \"text/javascript\";\n            s.async = true;\n            s.src = \"https://mc.yandex.ru/metrika/tag.js\";\n\n            if (w.opera === \"[object Opera]\") {\n                d.addEventListener(\"DOMContentLoaded\", f, false);\n            } else {\n                f();\n            }\n        })(document, window, \"yandex_metrika_callbacks2\");</script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/rlf.js\"></script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/vbf.js\"></script><script>window.TelegramBotId = '5036369722';\n    window.TelegramBotName = 'TestSantaSecretRuBot';\n\n    \n\n    function js(url) {\n        const s = document.createElement(\"script\");\n        s.type = \"text/javascript\";\n        s.src = url;\n        document.getElementsByTagName(\"head\")[0].appendChild(s);\n    }\n\n    window.addEventListener(\"load\", () => {\n        js(\"https://telegram.org/js/telegram-widget.js?15\");\n    }, false);</script><script src=\"/bundle.0a0aaccc7b18ab739d69.min.js\"></script></body></html>"
+				}
+			]
+		},
+		{
+			"name": "Change password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc333bb8-6752-4161-a631-b93a7939e319",
+						"exec": [
+							"// pm.test(\"Status code is 200\", function () {",
+							"//     pm.expect(pm.response.code).to.be.oneOf([200, 400]);",
+							"// });",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test status code\", () => {",
+							"if (jsonData === \"error\"){",
+							"    pm.expect(jsonData.error.message).to.eql(\"validations.invalid\");",
+							"    pm.response.to.have.status(400);",
+							"    }",
+							"    else if (jsonData === jsonData.id) {",
+							"        pm.response.to.have.status(200);}",
+							"});",
+							"",
+							"const testData = JSON.parse(request.data)",
+							"pm.environment.set(\"password\", testData.password)",
+							"",
+							"if (testData.password.length >= 6 && testData.password.length<= 20){",
+							"    pm.test(\"Status code is 200\", function () {",
+							"        pm.response.to.have.status(200)",
+							"    })}",
+							"    else {",
+							"        pm.test(\"Status code is 400\", function() {",
+							"        pm.response.to.have.status(400);",
+							"        }",
+							" )}",
+							"",
+							"if (testData.password.length >= 6 && testData.password.length<= 20){",
+							"    ",
+							"  pm.test(\"Check Json response\", function() {",
+							"        let jsonData = pm.response.json();",
+							"        pm.expect(jsonData.username).to.eql(\"natalia\")",
+							"        pm.expect(jsonData.id).to.eql(4946562)",
+							"    })}",
+							"    else {",
+							"        pm.test(\"Check Json response\", function() {",
+							"         pm.expect(jsonData.error.message).to.eql(\"validations.invalid\")",
+							"        }",
+							" )}",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e2763d54-b100-4abb-b260-21b74f279835",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\": \"Test12345\"}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/account/password",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"account",
+						"password"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log out",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52d9e01c-bb0a-4195-a543-92a0199a17fc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () { ",
+							"    pm.response.to.have.body(\"OK\"); ",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "89e3b9bf-aa09-432e-88c8-f97e601a2cbf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base url}}/logout",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign-in with old password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.error.message).to.eql(\"INVALID_USERNAME_OR_PASSWORD\");",
+							"    pm.expect(jsonData.error.name).to.eql(\"BadRequestError\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c2e0e52f-8a5a-4b24-b71b-e577ca2de7a0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/login?redirect=%2F",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "redirect",
+							"value": "%2F"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "deef25b3-1d6e-4d82-9779-bd533fcd7f5f",
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base url}}/login?redirect=%2F",
+							"host": [
+								"{{base url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "redirect",
+									"value": "%2F"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:50:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Thu, 26 Jan 2023 18:11:16 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aec-185ef46dc3a\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\" dir=\"ltr\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no\"><meta name=\"description\" content=\"Бесплатный сайт для организации онлайн жеребьевки на Тайного Санту между друзьями. Три шага: 1 - создай коробку, 2 - пригласи друзей, 3 - проведи жеребьевку\"/><link rel=\"canonical\" href=\"/\"/><title>Тайный Санта</title><link href=\"/bundle.0a0aaccc7b18ab739d69.min.css\" rel=\"stylesheet\"></head><body><div id=\"root\"></div><script>window.prerenderReady = false;</script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js\" integrity=\"sha256-yUhvEmYVhZ/GGshIQKArLvySDSh6cdmdcIx0spR3UP4=\" crossorigin=\"anonymous\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js\" integrity=\"sha256-vFt3l+illeNlwThbDUdoPTqF81M8WNSZZZt3HEjsbSU=\" crossorigin=\"anonymous\"></script><script>(function (d, w, c) {\n            (w[c] = w[c] || []).push(function () {\n                try {\n                    w.yaCounter50179975 = new Ya.Metrika2({\n                        id: 50179975,\n                        clickmap: true,\n                        trackLinks: true,\n                        accurateTrackBounce: true\n                    });\n                    w.yaCounter = w.yaCounter50179975;\n                } catch (e) {\n                }\n            });\n\n            var n = d.getElementsByTagName(\"script\")[0],\n                s = d.createElement(\"script\"),\n                f = function () {\n                    n.parentNode.insertBefore(s, n);\n                };\n            s.type = \"text/javascript\";\n            s.async = true;\n            s.src = \"https://mc.yandex.ru/metrika/tag.js\";\n\n            if (w.opera === \"[object Opera]\") {\n                d.addEventListener(\"DOMContentLoaded\", f, false);\n            } else {\n                f();\n            }\n        })(document, window, \"yandex_metrika_callbacks2\");</script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/rlf.js\"></script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/vbf.js\"></script><script>window.TelegramBotId = '5036369722';\n    window.TelegramBotName = 'TestSantaSecretRuBot';\n\n    \n\n    function js(url) {\n        const s = document.createElement(\"script\");\n        s.type = \"text/javascript\";\n        s.src = url;\n        document.getElementsByTagName(\"head\")[0].appendChild(s);\n    }\n\n    window.addEventListener(\"load\", () => {\n        js(\"https://telegram.org/js/telegram-widget.js?15\");\n    }, false);</script><script src=\"/bundle.0a0aaccc7b18ab739d69.min.js\"></script></body></html>"
+				}
+			]
+		},
+		{
+			"name": "Sign-in with new valid password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.username).to.eql(\"natalia\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "aee98591-291a-466b-b0f9-ab4c2bfb290b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test12345\" }\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/login?redirect=%2F",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "redirect",
+							"value": "%2F"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "7b67ac6c-79cc-40e9-a09e-4837748e9824",
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test12345\" }\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base url}}/login?redirect=%2F",
+							"host": [
+								"{{base url}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "redirect",
+									"value": "%2F"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:50:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Thu, 26 Jan 2023 18:11:16 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aec-185ef46dc3a\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\" dir=\"ltr\"><head><meta charset=\"UTF-8\"/><meta name=\"viewport\" content=\"width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no\"><meta name=\"description\" content=\"Бесплатный сайт для организации онлайн жеребьевки на Тайного Санту между друзьями. Три шага: 1 - создай коробку, 2 - пригласи друзей, 3 - проведи жеребьевку\"/><link rel=\"canonical\" href=\"/\"/><title>Тайный Санта</title><link href=\"/bundle.0a0aaccc7b18ab739d69.min.css\" rel=\"stylesheet\"></head><body><div id=\"root\"></div><script>window.prerenderReady = false;</script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js\" integrity=\"sha256-yUhvEmYVhZ/GGshIQKArLvySDSh6cdmdcIx0spR3UP4=\" crossorigin=\"anonymous\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js\" integrity=\"sha256-vFt3l+illeNlwThbDUdoPTqF81M8WNSZZZt3HEjsbSU=\" crossorigin=\"anonymous\"></script><script>(function (d, w, c) {\n            (w[c] = w[c] || []).push(function () {\n                try {\n                    w.yaCounter50179975 = new Ya.Metrika2({\n                        id: 50179975,\n                        clickmap: true,\n                        trackLinks: true,\n                        accurateTrackBounce: true\n                    });\n                    w.yaCounter = w.yaCounter50179975;\n                } catch (e) {\n                }\n            });\n\n            var n = d.getElementsByTagName(\"script\")[0],\n                s = d.createElement(\"script\"),\n                f = function () {\n                    n.parentNode.insertBefore(s, n);\n                };\n            s.type = \"text/javascript\";\n            s.async = true;\n            s.src = \"https://mc.yandex.ru/metrika/tag.js\";\n\n            if (w.opera === \"[object Opera]\") {\n                d.addEventListener(\"DOMContentLoaded\", f, false);\n            } else {\n                f();\n            }\n        })(document, window, \"yandex_metrika_callbacks2\");</script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/rlf.js\"></script><script defer=\"defer\" src=\"https://cdn.adlook.me/js/vbf.js\"></script><script>window.TelegramBotId = '5036369722';\n    window.TelegramBotName = 'TestSantaSecretRuBot';\n\n    \n\n    function js(url) {\n        const s = document.createElement(\"script\");\n        s.type = \"text/javascript\";\n        s.src = url;\n        document.getElementsByTagName(\"head\")[0].appendChild(s);\n    }\n\n    window.addEventListener(\"load\", () => {\n        js(\"https://telegram.org/js/telegram-widget.js?15\");\n    }, false);</script><script src=\"/bundle.0a0aaccc7b18ab739d69.min.js\"></script></body></html>"
+				}
+			]
+		},
+		{
+			"name": "Change password 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7b9293c7-4ebd-4602-8c34-b065505a7b94",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Check Json response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.username).to.eql(\"natalia\");",
+							"    pm.expect(jsonData.email).to.eql(\"melihova.qa@gmail.com\");",
+							"    pm.expect(jsonData.id).to.eql(4946562);",
+							"    ",
+							"})",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Test data type of the response\", () => {",
+							"  pm.expect(jsonData).to.be.an(\"object\");",
+							" ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1fdd7745-bc58-4eb3-be12-d8b1cc941731",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\": \"Test1234\"}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base url}}/account/password",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"account",
+						"password"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log out 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "52d9e01c-bb0a-4195-a543-92a0199a17fc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Body is correct\", function () { ",
+							"    pm.response.to.have.body(\"OK\"); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6cff5275-241e-46dd-ba8e-715997b7957f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base url}}/logout",
+					"host": [
+						"{{base url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "19860911-b169-45b3-ba84-4989af4a1c84",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a968e245-7f47-46e5-ab55-ca8cc9efe588",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3547675c-10db-47f3-ba11-4b2edc8f6a8d",
+			"key": "base url",
+			"value": "https://staging.lpitko.ru/api"
+		},
+		{
+			"id": "3b4af434-7417-42a8-a910-e13579b5c94a",
+			"key": "email",
+			"value": "melihova.qa@gmail.com",
+			"type": "string"
+		}
+	]
+}
