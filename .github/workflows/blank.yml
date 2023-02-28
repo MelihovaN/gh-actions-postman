@@ -35,5 +35,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-          postman login --with-api-key PMAK-63fcf6d6954ad46e75aa3420-a7fb5137e3d579db8ce0e4f3c7cd236da6
+          postman login --with-api-key ${{secrets.API_KEY}}
           postman collection run "postman/collections/Sign-in.json" -e "envir.json"
