@@ -1,0 +1,87 @@
+{
+	"id": "4ae625b0-ced1-4a6c-8f24-3d2077bd7ffe",
+	"name": "New Environment",
+	"values": [
+		{
+			"key": "email",
+			"value": "melihova.qa@gmail.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "base url",
+			"value": "https://santa-secret.ru/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "boxName",
+			"value": "monitor",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "boxKey",
+			"value": "port",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "PhoneRequired",
+			"value": "true",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "useNames",
+			"value": "true",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "cashLimit",
+			"value": "15",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "cashLimitCurrency",
+			"value": "eur",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "useWish",
+			"value": "false",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "usePost",
+			"value": "false",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "Test12345",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "newpassword",
+			"value": "Test1234",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "any",
+			"enabled": false
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-02-28T13:38:46.311Z",
+	"_postman_exported_using": "Postman/10.10.6"
+}
