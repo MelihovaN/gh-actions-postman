@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "47ea3def-a2c2-4aca-9ecb-a116364d9dd9",
+		"_postman_id": "0fd22324-3c8d-4692-be4e-203799fd0e59",
 		"name": "Sign-in Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "19331980-47ea3def-a2c2-4aca-9ecb-a116364d9dd9"
+		"_uid": "19331980-0fd22324-3c8d-4692-be4e-203799fd0e59"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "637a031e-c0e0-422e-8d96-2dd03c4a6ae7",
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
 						"exec": [
 							"pm.test(\"Status code is 404\", function () {",
 							"    pm.response.to.have.status(404);",
@@ -29,7 +29,7 @@
 					}
 				}
 			],
-			"id": "0c2fe81c-d407-48f6-9a3d-a503b1a3a0e5",
+			"id": "4613a319-7aec-45e9-b9c1-35766e451579",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -69,7 +69,7 @@
 			},
 			"response": [
 				{
-					"id": "1acc182f-33d6-44f0-9add-940c21f74b56",
+					"id": "e20d6c67-de4b-43c7-9a4b-2a3e8365a38d",
 					"name": "sign-in",
 					"originalRequest": {
 						"method": "POST",
@@ -108,7 +108,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Date",
@@ -166,7 +165,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "aa3dc109-3f1a-47bd-accb-4f9ac1e3a122",
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
 						"exec": [
 							"pm.test(\"Status code is 404\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -182,7 +181,7 @@
 					}
 				}
 			],
-			"id": "6869f4ab-3dca-4ec1-845d-31c93361b917",
+			"id": "eca87ebd-7360-458c-93f0-4455d12179e3",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -222,7 +221,7 @@
 			},
 			"response": [
 				{
-					"id": "f935860b-0eaa-42ef-91b9-49c81dba6282",
+					"id": "d5933d28-75a5-4eff-b3f9-0a14ca2b6e64",
 					"name": "sign-in",
 					"originalRequest": {
 						"method": "POST",
@@ -261,7 +260,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Date",
@@ -319,7 +317,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "de145dcd-0511-4c6c-a2a4-e83b19bc5448",
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -335,7 +333,7 @@
 					}
 				}
 			],
-			"id": "6660eca4-844f-40bf-9aa6-7512d6a911e5",
+			"id": "efff5de4-caa2-4196-a64c-33bcd87485c8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -375,7 +373,7 @@
 			},
 			"response": [
 				{
-					"id": "afca4b08-547c-436b-b95e-13887981da08",
+					"id": "d161c04c-945d-465f-a831-9ab94cdb0b51",
 					"name": "sign-in",
 					"originalRequest": {
 						"method": "POST",
@@ -414,7 +412,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Date",
@@ -472,7 +469,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e25f1e94-51cd-4126-9a9d-899239e78e82",
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -489,16 +486,31 @@
 					}
 				}
 			],
-			"id": "1f967308-1047-4c71-9cd1-15ddea4c3ed0",
+			"id": "7611a7e6-813e-416f-bf3a-2b6bcba854a7",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test12345\" }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -529,7 +541,7 @@
 			},
 			"response": [
 				{
-					"id": "5374773c-4ff5-481b-876b-0829106acab9",
+					"id": "d16790ec-96d9-41df-80e3-fd55f9ac99d3",
 					"name": "sign-in",
 					"originalRequest": {
 						"method": "POST",
@@ -568,7 +580,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Date",
@@ -626,7 +637,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ec7cba7c-1555-4b3d-9eb4-a58d9509d01d",
+						"id": "bc333bb8-6752-4161-a631-b93a7939e319",
 						"exec": [
 							"// pm.test(\"Status code is 200\", function () {",
 							"//     pm.expect(pm.response.code).to.be.oneOf([200, 400]);",
@@ -673,7 +684,7 @@
 					}
 				}
 			],
-			"id": "06099236-a9c6-4d2c-848e-87df535b2cb0",
+			"id": "e2763d54-b100-4abb-b260-21b74f279835",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -697,7 +708,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"password\": \"Test12345\"}\n\n",
+					"raw": "{\"password\": \"Test1234\"}\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -731,7 +742,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "610c2287-3f86-4368-b08f-ecd072d6dad6",
+						"id": "52d9e01c-bb0a-4195-a543-92a0199a17fc",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -746,7 +757,7 @@
 					}
 				}
 			],
-			"id": "e48c2891-8318-40db-b8f9-37a10af8db83",
+			"id": "89e3b9bf-aa09-432e-88c8-f97e601a2cbf",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -771,7 +782,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "93d709a2-df79-47d2-8c33-7d3fedbc3919",
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -787,7 +798,7 @@
 					}
 				}
 			],
-			"id": "6d52352c-22f7-45b4-9fce-d28f8199ed0f",
+			"id": "c2e0e52f-8a5a-4b24-b71b-e577ca2de7a0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -796,7 +807,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test12345\" }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -827,7 +838,7 @@
 			},
 			"response": [
 				{
-					"id": "40016778-f131-41e1-966a-ff4c5edce879",
+					"id": "deef25b3-1d6e-4d82-9779-bd533fcd7f5f",
 					"name": "sign-in",
 					"originalRequest": {
 						"method": "POST",
@@ -866,7 +877,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Date",
@@ -924,7 +934,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a7d34cc6-e04a-4553-91ae-67811319214f",
+						"id": "cc1d0751-5e06-4bd8-8cbb-05024b468ff3",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -939,7 +949,7 @@
 					}
 				}
 			],
-			"id": "e57ee475-0a2f-4c1b-92dc-b544c1f8d028",
+			"id": "aee98591-291a-466b-b0f9-ab4c2bfb290b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -948,7 +958,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test12345\" }\n\n",
+					"raw": "{ \"email\": \"{{email}}\", \"password\": \"Test1234\" }\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -979,7 +989,7 @@
 			},
 			"response": [
 				{
-					"id": "4b481091-33df-490c-a2c3-b0bc31ba8ae9",
+					"id": "7b67ac6c-79cc-40e9-a09e-4837748e9824",
 					"name": "sign-in",
 					"originalRequest": {
 						"method": "POST",
@@ -1018,7 +1028,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "html",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "Date",
@@ -1076,7 +1085,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "50c1a1f3-df52-46ec-bd66-316f279b3cc4",
+						"id": "7b9293c7-4ebd-4602-8c34-b065505a7b94",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1099,7 +1108,7 @@
 					}
 				}
 			],
-			"id": "b5c42f1e-f119-47a1-ac0d-c2147d78b2d2",
+			"id": "1fdd7745-bc58-4eb3-be12-d8b1cc941731",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1118,7 +1127,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"password\": \"Test1234\"}\n\n",
+					"raw": "{\"password\": \"Test12345\"}\n\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1152,7 +1161,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c3bb66bb-c675-41d7-9a57-d30bfff57a4c",
+						"id": "52d9e01c-bb0a-4195-a543-92a0199a17fc",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -1167,7 +1176,7 @@
 					}
 				}
 			],
-			"id": "938f6a07-152a-4a0b-9d86-f3417836f0c3",
+			"id": "6cff5275-241e-46dd-ba8e-715997b7957f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1191,7 +1200,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3c7886a1-20dd-4b0e-ad34-7d9f03c739c0",
+				"id": "19860911-b169-45b3-ba84-4989af4a1c84",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1201,7 +1210,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "77a947a6-14e9-4d33-897c-617558639eb1",
+				"id": "a968e245-7f47-46e5-ab55-ca8cc9efe588",
 				"type": "text/javascript",
 				"exec": [
 					""
